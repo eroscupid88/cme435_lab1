@@ -1,0 +1,33 @@
+List of Design Features
+----------------------------------------
+ID:Design Feature
+----------------------------------------
+1: (One sentence for each design feature if possible.)
+
+2:
+
+3:
+
+
+
+List of Test cases
+----------------------------------------
+ID:Task	Description
+----------------------------------------
+1:reset_test:
+(Add a short description of this test case here.)
+
+2:sanity_check
+(Add a short description of this test case here.)
+
+3:.....
+
+
+
+Embedded Bugs
+----------------------------------------
+ID:Description
+----------------------------------------
+1:
+
+2:
