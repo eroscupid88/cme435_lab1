@@ -163,12 +163,12 @@ module testbench(
     */
     task sanity_check();
         $display("**********Start Sanity check task******");
-        @(posedge clk_in)
-            load_task(45);
-        // s_in = 2'b11;
-        // for_up_down_counter = 45;
-        #200
-        @(posedge clk_in)
+        // @(posedge clk_in)
+        //     load_task(45);
+        s_in = 2'b11;
+        for_up_down_counter = 45;
+        #1000
+        repeat (100)@(posedge clk_in)
             $display("At:%d,clk_in:%d,s_in:%d,input data:%d, output:%d",$time,clk_in,s_in,for_up_down_counter,data_output_from_counter);
         $display("**********FINISH SANITY CHECK TEST**********");
     endtask;
