@@ -11,9 +11,9 @@ module tbench_top;
 */
 	initial 
 		begin
-		// dut.student_no = 11100292;
-		// dut.bug_mode = 1;
-		// dut.enable_dut_bugs;
+		dut.student_no = 11100292;
+		dut.bug_mode = 1;
+		dut.enable_dut_bugs;
 		end
 
 	

@@ -63,4 +63,4 @@ ID:Description
 
 3: When in decrement mode, if input coming into DUT is 255, the output coming out from DUT is decrese by 2 instead of 1
 
-to fix bug:
+4: Reset is not working when data count up to 255 in increment mode. Data hold at value of 255 instead of 0

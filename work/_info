@@ -10,17 +10,18 @@ z2
 cModel Technology
 Z0 d/home/dtv782/engr-ece/CME 435/cme435_lab1
 T_opt
-Z1 !s110 1664311334
-VkiTUXA01cTb4MXDE6FF?N1
+!s110 1664311424
+VS4N?ibNjnVJ2@8_O[3n5i3
 04 10 4 work tbench_top fast 0
-=1-b07b25240f21-63336026-a574c-3e6ee
+=1-b07b25240f21-63336080-1956f-3e82c
 o-quiet -auto_acc_if_foreign -work work
-Z2 tCvgOpt 0
+Z1 tCvgOpt 0
 n@_opt
 OL;O;2020.1_1;71
+R0
 vclock_generator
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R1
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1664314933
 !i10b 1
 !s100 iWKX>Bcg9jU6X@0[nzazP3
 Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -31,46 +32,46 @@ R0
 w1664148476
 8verification/clock_generator.sv
 Fverification/clock_generator.sv
-!i122 5
+!i122 7
 L0 4 5
 Z6 OL;L;2020.1_1;71
 r1
 !s85 0
 31
-Z7 !s108 1664311334.000000
-Z8 !s107 verification/clock_generator.sv|verification/testbench.sv|verification/tbench_top.sv|dut/up_down_counter.svp|
-Z9 !s90 -f|script/cme435_lab1.f|
+Z7 !s108 1664314932.000000
+!s107 verification/clock_generator.sv|verification/testbench.sv|verification/tbench_top.sv|dut/up_down_counter.svp|
+Z8 !s90 -f|script/cme435_lab1.f|
 !i113 0
-Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
-vtbench_top
-R3
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R1
+vtbench_top
+R2
+R3
 !i10b 1
-!s100 KaA>WgmJfC2]Y=Z94^Scf3
+!s100 ZFMiSLLM2[MZ2j?^5hK@30
 R4
-Ig^4;m?n<dmf<EJ7EB_deT0
+ILXY7[>`4Lcnll56NgHS<31
 R5
 S1
 R0
-w1664311197
+w1664311405
 8verification/tbench_top.sv
 Fverification/tbench_top.sv
-!i122 5
+!i122 7
 L0 2 43
 R6
 r1
 !s85 0
 31
 R7
+Z10 !s107 verification/clock_generator.sv|verification/testbench.sv|verification/tbench_top.sv|dut/up_down_counter.svp|
 R8
-R9
 !i113 0
-R10
-R2
-vtestbench
-R3
+R9
 R1
+vtestbench
+R2
+R3
 !i10b 1
 !s100 ^cZ2nz]0TSBaVeEZBT^cA0
 R4
@@ -81,21 +82,21 @@ R0
 w1664311073
 8verification/testbench.sv
 Fverification/testbench.sv
-!i122 5
+!i122 7
 L0 2 246
 R6
 r1
 !s85 0
 31
 R7
-R8
-R9
-!i113 0
 R10
-R2
-vup_down_counter
-R3
+R8
+!i113 0
+R9
 R1
+vup_down_counter
+R2
+R3
 !i10b 1
 !s100 o>X;zYSVzMcEYo27PdTk50
 R4
@@ -107,15 +108,15 @@ R0
 w1664246314
 8dut/up_down_counter.svp
 Fdut/up_down_counter.svp
-!i122 5
+!i122 7
 L0 1 21
 R6
 r1
 !s85 0
 31
 R7
-R8
-R9
-!i113 0
 R10
-R2
+R8
+!i113 0
+R9
+R1

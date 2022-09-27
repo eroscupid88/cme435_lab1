@@ -1,6 +1,6 @@
 # do script/cme435_lab1_all.do
 # QuestaSim-64 vlog 2020.1_1 Compiler 2020.03 Mar  4 2020
-# Start time: 14:42:14 on Sep 27,2022
+# Start time: 15:42:12 on Sep 27,2022
 # vlog -f script/cme435_lab1.f 
 # -- Compiling module up_down_counter
 # -- Compiling module tbench_top
@@ -9,15 +9,12 @@
 # 
 # Top level modules:
 # 	tbench_top
-# End time: 14:42:14 on Sep 27,2022, Elapsed time: 0:00:00
+# End time: 15:42:13 on Sep 27,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # tbench_top
 # vsim tbench_top 
-# Start time: 14:42:14 on Sep 27,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: verification/tbench_top.sv(28): (vopt-3838) Variable 'clk_in' written by continuous and procedural assignments. 
-# One of the assignments is implicit. See verification/tbench_top.sv(26). 
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Start time: 15:42:13 on Sep 27,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # //  Questa Sim-64
 # //  Version 2020.1_1 linux_x86_64 Mar  4 2020
 # //
@@ -37,13 +34,27 @@
 # 	**********Beginning test!**********
 # 
 # 	**********Start reset test task******
+# ** Error: Error at reset test with increment mode, data coming from DUT is:255
+#    Time: 6300 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 197
+# ** Error: Error at reset test with increment mode, data coming from DUT is:255
+#    Time: 10700 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 208
+# ** Error: Error at reset test with increment mode, data coming from DUT is:255
+#    Time: 15100 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 218
 # 	**********FINISH RESET TEST**********
 # 
 # 	**********Start Sanity check task******
-# At:               17500,clk_in:1,s_in:3,input data: 33, output: 33
+# ** Error: tf255
+#    Time: 17500 ns  Scope: tbench_top.testbench.sanity_check File: verification/testbench.sv Line: 170
+# At:               17500,clk_in:1,s_in:3,input data: 33, output:255
 # 	**********FINISH SANITY CHECK TEST**********
 # 
 # 	**********Start testing load data. Mode: s_in = 2'b11********
+# ** Error: Error in Load mode Clk_in:1,s_in:3,input data from DUT:255,output data to DUT:200
+#    Time: 18100 ns  Scope: tbench_top.testbench.test_load_data File: verification/testbench.sv Line: 46
+# ** Error: Error in Load mode Clk_in:1,s_in:3,input data from DUT:255,output data to DUT:245
+#    Time: 18700 ns  Scope: tbench_top.testbench.test_load_data File: verification/testbench.sv Line: 46
+# ** Error: Error in Load mode Clk_in:1,s_in:3,input data from DUT:255,output data to DUT:  0
+#    Time: 19300 ns  Scope: tbench_top.testbench.test_load_data File: verification/testbench.sv Line: 46
 # 	**********FINISH LOAD MODE TEST**********
 # 
 # 	**********Start testing hold mode . Mode: s_in = 2'b00********
@@ -53,9 +64,611 @@
 # 	**********FINISH INCREMENT MODE TEST**********
 # 
 # 	**********Start testing increment mode. Mode: s_in = 2'b01********
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 103900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 104100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 104300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 104500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 104700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 104900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 105100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 105300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 105500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 105700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 105900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 106100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 106300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 106500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 106700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 106900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 107100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 107300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 107500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 107700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 107900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 108100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 108300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 108500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 108700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 108900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 109100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 109300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 109500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 109700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 109900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 110100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 110300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 110500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 110700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 110900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 111100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 111300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 111500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 111700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 111900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 112100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 112300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 112500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 112700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 112900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 113100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 113300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 113500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 113700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 113900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 114100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 114300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 114500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 114700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 114900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 115100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 115300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 115500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 115700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 115900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 116100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 116300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 116500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 116700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 116900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 117100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 117300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 117500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 117700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 117900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 118100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 118300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 118500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 118700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 118900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 119100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 119300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 119500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 119700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 119900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 120100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 120300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 120500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 120700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 120900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 121100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 121300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 121500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 121700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 121900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 122100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 122300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 122500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 122700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 122900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 123100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 123300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 123500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 123700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 123900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 124100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 124300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 124500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 124700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 124900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 125100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 125300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 125500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 125700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 125900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 126100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 126300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 126500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 126700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 126900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 127100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 127300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 127500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 127700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 127900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 128100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 128300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 128500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 128700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 128900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 129100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 129300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 129500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 129700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 129900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 130100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 130300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 130500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 130700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 130900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 131100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 131300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 131500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 131700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 131900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 132100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 132300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 132500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 132700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 132900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 133100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 133300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 133500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 133700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 133900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 134100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 134300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 134500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 134700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 134900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 135100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 135300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 135500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 135700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 135900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 136100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 136300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 136500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 136700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 136900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 137100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 137300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 137500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 137700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 137900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 138100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 138300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 138500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 138700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 138900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 139100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 139300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 139500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 139700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 139900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 140100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 140300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 140500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 140700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 140900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 141100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 141300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 141500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 141700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 141900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 142100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 142300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 142500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 142700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 142900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 143100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 143300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 143500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 143700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 143900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 144100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 144300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 144500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 144700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 144900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 145100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 145300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 145500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 145700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 145900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 146100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 146300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 146500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 146700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 146900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 147100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 147300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 147500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 147700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 147900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 148100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 148300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 148500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 148700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 148900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 149100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 149300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 149500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 149700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 149900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 150100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 150300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 150500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 150700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 150900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 151100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 151300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 151500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 151700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 151900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 152100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 152300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 152500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 152700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 152900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 153100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 153300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 153500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 153700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 153900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 154100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 154300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 154500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 154700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 154900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 155100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 155300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 155500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 155700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 155900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 156100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 156300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 156500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 156700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 156900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 157100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 157300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 157500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 157700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 157900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 158100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 158300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 158500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 158700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 158900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 159100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 159300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 159500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 159700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 159900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 160100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 160300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 160500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 160700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 160900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 161100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 161300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 161500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 161700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 161900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 162100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 162300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 162500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 162700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 162900 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 163100 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 163300 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 163500 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
+# ** Error: Error in Increment Mode with roll over:	 Clk_in:1,s_in:1,data from DUT:255,data to DUT:255
+#    Time: 163700 ns  Scope: tbench_top.testbench.test_increment_mode_with_roll_over File: verification/testbench.sv Line: 81
 # 	**********FINISH INCREMENT MODE WITH ROLL OVER TEST**********
 # 
 # 	**********Start testing decrement mode. Mode: s_in = 2'b10********
+# ** Error: Error in Decrement Mode :	 Clk_in:1,s_in:2,data from DUT:253,data to DUT:255
+#    Time: 164300 ns  Scope: tbench_top.testbench.test_decrement_mode File: verification/testbench.sv Line: 102
 # 	**********FINISH DECREMENT MODE  TEST**********
 # 
 # 	**********Start testing decrement mode with roll under. Mode: s_in = 2'b10********
@@ -67,5 +680,5 @@
 # Time out!
 # ** Note: $finish    : verification/testbench.sv(25)
 #    Time: 1 ms  Iteration: 0  Instance: /tbench_top/testbench
-# End time: 14:42:15 on Sep 27,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# End time: 15:42:14 on Sep 27,2022, Elapsed time: 0:00:01
+# Errors: 308, Warnings: 0
