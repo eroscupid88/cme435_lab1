@@ -28,6 +28,7 @@ Embedded Bugs
 ----------------------------------------
 ID:Description
 ----------------------------------------
-1: The first bug is when reset bit is set to 0, nothing come out from DUT but when reset is set to 1, data from DUT to test bench
+1: Bugs happened while using load mode or hold mode, the output is not coming out from DUT
+3: The first bug is when reset bit is set to 0, nothing come out from DUT but when reset is set to 1, data from DUT to test bench
 
-2: when data sent to test bench after reset = 0. first clock cycle data come out from DUT is 0, second clock cycle data come from DUT is 255 and they are not change after many other clock cycles
+4: when data sent to test bench after reset = 0. first clock cycle data come out from DUT is 0, second clock cycle data come from DUT is 255 and they are not change after many other clock cycles

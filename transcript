@@ -3,20 +3,74 @@
 # vmap work work 
 # Modifying modelsim.ini
 # QuestaSim-64 vlog 2020.1_1 Compiler 2020.03 Mar  4 2020
-# Start time: 11:28:27 on Sep 27,2022
+# Start time: 12:50:18 on Sep 27,2022
 # vlog -f script/cme435_lab1.f 
 # -- Compiling module up_down_counter
 # -- Compiling module tbench_top
 # -- Compiling module testbench
-# ** Error: (vlog-13069) verification/testbench.sv(41): near "(": syntax error, unexpected '('.
 # -- Compiling module clock_generator
 # -- Compiling module reset_driver
-# End time: 11:28:27 on Sep 27,2022, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: /CMC/tools/mentor/questasim_2020.1_1/questasim/linux_x86_64/vlog failed.
-# Error in macro ./script/cme435_lab1_all.do line 8
-# /CMC/tools/mentor/questasim_2020.1_1/questasim/linux_x86_64/vlog failed.
-#     while executing
-# "vlog -f script/cme435_lab1.f"
 # 
-# <EOF>
+# Top level modules:
+# 	tbench_top
+# 	reset_driver
+# End time: 12:50:18 on Sep 27,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# tbench_top
+# vsim tbench_top 
+# Start time: 12:50:18 on Sep 27,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: verification/tbench_top.sv(26): (vopt-3838) Variable 'clk_in' written by continuous and procedural assignments. 
+# One of the assignments is implicit. See verification/tbench_top.sv(24). 
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2020.1_1 linux_x86_64 Mar  4 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tbench_top(fast)
+# 	**********Beginning test!**********
+# 
+# 	**********Start reset test task******
+# 	**********FINISH RESET TEST**********
+# 
+# 	**********Start Sanity check task******
+# At:                2900,clk_in:1,s_in:3,input data: 33, output: 33
+# 	**********FINISH SANITY CHECK TEST**********
+# 
+# 	**********Start testing load data. Mode: s_in = 2'b11********
+# 	**********FINISH LOAD MODE TEST**********
+# 
+# 	**********Start testing hold mode . Mode: s_in = 2'b00********
+# 	**********FINISH HOLD MODE TEST**********
+# 
+# 	**********Start testing increment mode. Mode: s_in = 2'b01********
+# 	**********FINISH INCREMENT MODE TEST**********
+# 
+# 	**********Start testing increment mode. Mode: s_in = 2'b01********
+# 	**********FINISH INCREMENT MODE WITH ROLL OVER TEST**********
+# 
+# 	**********Start testing decrement mode. Mode: s_in = 2'b10********
+# 	**********FINISH DECREMENT MODE  TEST**********
+# 
+# 	**********Start testing decrement mode with roll under. Mode: s_in = 2'b10********
+# 	**********FINISH DECREMENT MODE WITH ROLL UNDER TEST**********
+# 
+# 	**********Start testing hold mode . Mode: s_in = 2'b00********
+# 	**********FINISH HOLD MODE TEST**********
+# 
+# Time out!
+# ** Note: $finish    : verification/testbench.sv(25)
+#    Time: 1 ms  Iteration: 0  Instance: /tbench_top/testbench
+# End time: 12:50:19 on Sep 27,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

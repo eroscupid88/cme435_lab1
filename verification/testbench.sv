@@ -12,6 +12,7 @@ module testbench(
 	const string time_out_message = "Time out!";
     bit [3:0][7:0] datas;
     logic [7:0] previous_data ; 
+    logic [7:0]data_hold;
     always @(posedge clk_in)
         previous_data <= data_output_from_counter;
     initial
@@ -35,60 +36,51 @@ module testbench(
     test load data task using random data from list and test if data going to DUT is equal to data going to test bench
 */
     task test_load_data(input bit [3:0][7:0]data);
-        $display("**********Start testing load data. Mode: s_in = 2'b11********");
+        $display("\t**********Start testing load data. Mode: s_in = 2'b11********");
         foreach (data[i])
         begin
-            repeat(2)@(posedge clk_in);           // load data every 2 clk cycle
-            load_task(data[i]);    // 1 clk cycle
-            $display("Error in%d-%d-%d-%d-rs%d",clk_in,s_in,for_up_down_counter,data_output_from_counter,reset_in);
-            #100    
-                @(posedge clk_in)
-                begin
-                    $display("Error in%d-%d-%d-%d-rs%d",clk_in,s_in,data[i],data_output_from_counter,reset_in);
-                    if ((s_in ==2'b11)&&(data_output_from_counter != data[i]))                   
-                        $display("Error in Load mode Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,data[i]);
-                end
+            @(posedge clk_in);           // load data every clk cycle
+            load_task(data[i]);            
+            repeat(2)@(posedge clk_in);      // check if 2nd clk cycle the data coming in or not
+            assert (s_in ==2'b11 && data_output_from_counter == data[i]) 
+            else   $error("Error in Load mode Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,data[i]);
         end
+
+        $display("\t**********FINISH LOAD MODE TEST**********\n");
     endtask
 
 /*
     Test increment mode to check data coming from DUT to test bench is increase by 1
 */
     task test_increment_mode();
-        $display("**********Start testing increment mode. Mode: s_in = 2'b01********");
+        $display("\t**********Start testing increment mode. Mode: s_in = 2'b01********");
         previous_data =data_output_from_counter;
-        @(posedge clk_in)
         s_in = 2'b01;
-        #200
-        repeat (300) @(data_output_from_counter)
+        @(posedge clk_in); // wait for 1 clk cycle
+        repeat (300) @(posedge clk_in) 
             begin
-            // $monitor("Increment Mode:\t Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
-            if ((reset_in != 1) && (data_output_from_counter != previous_data+1) && (previous_data !=255))
-                begin
-                $display("Error in Increment Mode:\t Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
-                end
-            previous_data = data_output_from_counter;   
-            end
+            if ((previous_data !=255) && (reset_in != 1))
+                assert (data_output_from_counter == previous_data+1)
+                else $error("Error in Increment Mode:\t Clk_in:%b,s_in:%d,data from DUT:%d,data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
+            end 
+        $display("\t**********FINISH INCREMENT MODE TEST**********\n");
     endtask
 
 /*
     Test increment mode to check data coming from DUT to test bench is equal to 0 if input to DUT is 255
 */
     task test_increment_mode_with_roll_over;
-        $display("**********Start testing increment mode with roll over. Mode: s_in = 2'b01********");
-        // load data input = 255
-        load_task(255);
-        $display("%d",for_up_down_counter);
-        // wait for 1 cycle
-        @(posedge clk_in)
+        $display("\t**********Start testing increment mode. Mode: s_in = 2'b01********");
+        previous_data =data_output_from_counter;
         s_in = 2'b01;
-        // wait for 1 clk cycle 
-        #200
-        @(data_output_from_counter)
-            if ((reset_in != 1) && (data_output_from_counter !=0))
-                begin
-                $display("Error in Increment Mode with roll over:\t Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
-                end
+        @(posedge clk_in); // wait for 1 clk cycle
+        repeat (300) @(posedge clk_in) 
+            begin
+            if ((previous_data ==255) && (reset_in != 1))
+                assert (data_output_from_counter == 0)
+                else $error("Error in Increment Mode with roll over:\t Clk_in:%b,s_in:%d,data from DUT:%d,data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
+            end 
+        $display("\t**********FINISH INCREMENT MODE WITH ROLL OVER TEST**********\n");
           
     endtask
 
@@ -97,19 +89,19 @@ module testbench(
     Test decrement mode to check data coming from DUT to test bench is decrese by 1
 */
     task test_decrement_mode();
-        $display("**********Start testing decrement mode. Mode: s_in = 2'b10********");
+        $display("\t**********Start testing decrement mode. Mode: s_in = 2'b10********");
         previous_data =data_output_from_counter;
-        @(posedge clk_in)
+        @(posedge clk_in);
+        
         s_in = 2'b10;
-        repeat (300) @(data_output_from_counter)
-            begin
-            // $monitor("Increment Mode:\t Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
-            if ((reset_in != 1) && ( data_output_from_counter != previous_data-1) && (previous_data !=0))
-                begin
-                $display("Error in decrement Mode:\t Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
-                end
-            previous_data = data_output_from_counter;   
-            end
+        @(posedge clk_in);
+        repeat (300) @(posedge clk_in)
+        begin
+            if ((previous_data !=0) && (reset_in != 1))
+                assert (data_output_from_counter == previous_data-1)
+                else $error("Error in Decrement Mode :\t Clk_in:%b,s_in:%d,data from DUT:%d,data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
+            end 
+        $display("\t**********FINISH DECREMENT MODE  TEST**********\n");
     endtask
 
 
@@ -117,21 +109,17 @@ module testbench(
     Test decrement mode with roll under to check data coming from DUT to test bench is equal to 255 if input to DUT is 0
 */
     task test_decrement_mode_with_roll_under;
-        $display("**********Start testing decrement mode with roll under. Mode: s_in = 2'b10********");
-        // load data input = 0
-        load_task(0);
-        $display("%d",for_up_down_counter);
-        // wait for 1 cycle
-        @(posedge clk_in)
+        $display("\t**********Start testing decrement mode with roll under. Mode: s_in = 2'b10********");
+        previous_data =data_output_from_counter;
         s_in = 2'b10;
-        // wait for 1 clk cycle 
-        #200
-        @(data_output_from_counter)
-            if ((reset_in != 1) && (data_output_from_counter !=255))
-                begin
-                $display("Error in Decrement Mode with roll under:\t Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
-                end
-          
+        @(posedge clk_in); // wait for 1 clk cycle
+        repeat (300) @(posedge clk_in) 
+            begin
+            if ((previous_data ==0) && (reset_in != 1))
+                assert (data_output_from_counter == 255)
+                else $error("Error in Decrement Mode with roll under:\t Clk_in:%b,s_in:%d,data from DUT:%d,data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
+            end 
+        $display("\t**********FINISH DECREMENT MODE WITH ROLL UNDER TEST**********\n");
     endtask
 
 
@@ -140,69 +128,78 @@ module testbench(
     Test hold mode: change to increment mode, wait for data to change random number, change to hold mode then test if the data change after 1 cycle
 */
     task test_hold_mode();
-        $display("**********Start testing hold mode . Mode: s_in = 2'b00********");
-        // change to increment mode
-        @(posedge clk_in)
+        $display("\t**********Start testing hold mode . Mode: s_in = 2'b00********");
+        // test hold in decrement mode
+        load_task (80); // load random number
+        s_in = 2'b10;
+        repeat (7) @(posedge clk_in); // running decrement mode for 7 cycles
+        s_in = 2'b00;   // change mode to hold
+        
+        @(posedge clk_in);
+        data_hold = data_output_from_counter;
+        // $display("data decrement mode before hold: %d",data_hold);
             // check if next cycle whether data ouput from counter is changing or not 
-        #100
+        repeat (50) @(posedge clk_in)
+            assert (data_output_from_counter == data_hold) 
+            else   $error("Error in hold mode:\t Clk_in:%b,s_in:%d,input data from DUT:%d",clk_in,s_in,data_output_from_counter);
+           
+        // test hold in increment mode
         @(posedge clk_in)
-            if (data_output_from_counter != 45)
-                $display("Error in hold mode:\t Clk_in:%b,s_in:%d,input data from DUT:%d",clk_in,s_in,data_output_from_counter);   
-        // change to decrement mode
-        #100
-        @(posedge clk_in)
-            s_in = 2'b10;
-        @(data_output_from_counter == 200) // data = 200
-            s_in = 2'b00;
+        s_in = 2'b01; // change to increment mode
+        repeat (7) @(posedge clk_in); // running increment mode for 7 cycles
+        s_in = 2'b00;   // change mode to hold
+        // $display("data increment before hold: %d",data_hold);
+        @(posedge clk_in);
+        data_hold = data_output_from_counter;
             // check if next cycle whether data ouput from counter is changing or not 
-        #100
-        @(posedge clk_in)
-            if (data_output_from_counter != 200)
-                $display("Error in hold mode:\t Clk_in:%b,s_in:%d,input data from DUT:%d",clk_in,s_in,data_output_from_counter);
-
+        repeat (50) @(posedge clk_in)
+            assert (data_output_from_counter == data_hold) 
+            else   $error("Error in hold mode:\t Clk_in:%b,s_in:%d,input data from DUT:%d",clk_in,s_in,data_output_from_counter);
+        
+        $display("\t**********FINISH HOLD MODE TEST**********\n");
     endtask
 
     /*
         sanity check task to display output of the DUT to make sure I/O connect properly
     */
     task sanity_check();
-        $display("**********Start Sanity check task******");
+        $display("\t**********Start Sanity check task******");
         load_task(33);
         repeat(2)@(posedge clk_in);
         $display("At:%d,clk_in:%d,s_in:%d,input data:%d, output:%d",$time,clk_in,s_in,for_up_down_counter,data_output_from_counter);
-        $display("**********FINISH SANITY CHECK TEST**********");
+        $display("\t**********FINISH SANITY CHECK TEST**********\n");
     endtask;
 
 
 
 
     task reset_test;
-        $display("**********Start reset test task******");
+        $display("\t**********Start reset test task******");
         load_task(30);
-        #180
-        @(posedge clk_in) assert (data_output_from_counter != 0) 
-        else   $error("sadfsdaf");
-            $display("rs-clk-toDUT:-totest:%dtime%treset%d",data_output_from_counter,$realtime,reset_in);
-            if ((reset_in == 1) && (data_output_from_counter != 0))
-                $display("rs%d-clk%d-toDUT:%d-totest:%d",reset_in,clk_in,for_up_down_counter,data_output_from_counter);
-        $display("**********FINISH RESET TEST**********");
+        @(posedge clk_in);
+        $root.tbench_top.reset_in = 1'b1;
+        
+        repeat (10) @(posedge clk_in);
+        $root.tbench_top.reset_in = 1'b0;
+        $display("\t**********FINISH RESET TEST**********\n");
     endtask
 
 
     initial
     begin
-        $display("**********Beginning test!**********");
+        $display("\t**********Beginning test!**********\n");
         // start test after 2 clock cycles
         repeat(2)@(posedge clk_in);
-        // reset_test();
+        reset_test();
         sanity_check();
         test_load_data(datas);
-        // test_increment_mode();
-        // test_increment_mode_with_roll_over();
-        // test_hold_mode();
-        // test_decrement_mode();
-        // test_decrement_mode_with_roll_under();
-        // $display("%s",time_out_message);
+        test_hold_mode();
+        test_increment_mode();
+        test_increment_mode_with_roll_over();
+        test_decrement_mode();
+        test_decrement_mode_with_roll_under();
+        test_hold_mode();
+        $display("%s",time_out_message);
     end
 
     initial begin

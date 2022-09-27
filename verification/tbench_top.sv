@@ -16,7 +16,10 @@ module tbench_top;
 
 	
 
-	reset_driver reset_driver(.reset_in);
+	initial begin
+		reset_in = 1'b1;
+		#50 reset_in =1'b0;
+	end
 
 	clock_generator clock_generator(.clk_in);
 
