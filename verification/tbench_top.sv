@@ -5,6 +5,10 @@ module tbench_top;
 	logic [1:0] s_in;
 	bit clk_in,reset_in;
 
+
+/*
+	uncommend to enable bug mode
+*/
 	initial 
 		begin
 		// dut.student_no = 11100292;

@@ -4,7 +4,6 @@ if {! [file exists work]} {
   puts "CME435 EX1: Creating work library..."
   vlib work
 }
-vmap work work
 vlog -f script/cme435_lab1.f
 puts "CME435 EX1: Compiling..."
 set tbench_top tbench_top

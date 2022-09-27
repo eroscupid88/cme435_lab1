@@ -166,6 +166,8 @@ module testbench(
         $display("\t**********Start Sanity check task******");
         load_task(33);
         repeat(2)@(posedge clk_in);
+        assert (for_up_down_counter == data_output_from_counter) 
+        else   $error("tf%d",data_output_from_counter);
         $display("At:%d,clk_in:%d,s_in:%d,input data:%d, output:%d",$time,clk_in,s_in,for_up_down_counter,data_output_from_counter);
         $display("\t**********FINISH SANITY CHECK TEST**********\n");
     endtask;
