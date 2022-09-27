@@ -64,3 +64,6 @@ ID:Description
 3: When in decrement mode, if input coming into DUT is 255, the output coming out from DUT is decrese by 2 instead of 1
 
 4: Reset is not working when data count up to 255 in increment mode. Data hold at value of 255 instead of 0
+
+5: If reset_in = 1. data coming out from DUT is 255. if between 0- 2 clock cycle reset turn to 0, data will not coming out from DUT.
+ But after waiting for 2 clock cycle , if reset_in = 0 data will come out from DUT

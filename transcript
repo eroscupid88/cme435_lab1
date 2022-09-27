@@ -1,6 +1,6 @@
 # do script/cme435_lab1_all.do
 # QuestaSim-64 vlog 2020.1_1 Compiler 2020.03 Mar  4 2020
-# Start time: 15:42:12 on Sep 27,2022
+# Start time: 16:37:44 on Sep 27,2022
 # vlog -f script/cme435_lab1.f 
 # -- Compiling module up_down_counter
 # -- Compiling module tbench_top
@@ -9,12 +9,15 @@
 # 
 # Top level modules:
 # 	tbench_top
-# End time: 15:42:13 on Sep 27,2022, Elapsed time: 0:00:01
+# End time: 16:37:44 on Sep 27,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # tbench_top
 # vsim tbench_top 
-# Start time: 15:42:13 on Sep 27,2022
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 16:37:44 on Sep 27,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: verification/tbench_top.sv(28): (vopt-3838) Variable 'clk_in' written by continuous and procedural assignments. 
+# One of the assignments is implicit. See verification/tbench_top.sv(26). 
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Sim-64
 # //  Version 2020.1_1 linux_x86_64 Mar  4 2020
 # //
@@ -34,17 +37,19 @@
 # 	**********Beginning test!**********
 # 
 # 	**********Start reset test task******
+# ** Error: Error at reset test with load mode, data coming from DUT is:255
+#    Time: 1700 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 184
 # ** Error: Error at reset test with increment mode, data coming from DUT is:255
-#    Time: 6300 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 197
+#    Time: 6300 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 195
 # ** Error: Error at reset test with increment mode, data coming from DUT is:255
-#    Time: 10700 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 208
+#    Time: 10700 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 206
 # ** Error: Error at reset test with increment mode, data coming from DUT is:255
-#    Time: 15100 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 218
+#    Time: 15100 ns  Scope: tbench_top.testbench.reset_test File: verification/testbench.sv Line: 216
 # 	**********FINISH RESET TEST**********
 # 
 # 	**********Start Sanity check task******
 # ** Error: tf255
-#    Time: 17500 ns  Scope: tbench_top.testbench.sanity_check File: verification/testbench.sv Line: 170
+#    Time: 17500 ns  Scope: tbench_top.testbench.sanity_check File: verification/testbench.sv Line: 168
 # At:               17500,clk_in:1,s_in:3,input data: 33, output:255
 # 	**********FINISH SANITY CHECK TEST**********
 # 
@@ -668,7 +673,7 @@
 # 
 # 	**********Start testing decrement mode. Mode: s_in = 2'b10********
 # ** Error: Error in Decrement Mode :	 Clk_in:1,s_in:2,data from DUT:253,data to DUT:255
-#    Time: 164300 ns  Scope: tbench_top.testbench.test_decrement_mode File: verification/testbench.sv Line: 102
+#    Time: 164100 ns  Scope: tbench_top.testbench.test_decrement_mode File: verification/testbench.sv Line: 100
 # 	**********FINISH DECREMENT MODE  TEST**********
 # 
 # 	**********Start testing decrement mode with roll under. Mode: s_in = 2'b10********
@@ -680,5 +685,5 @@
 # Time out!
 # ** Note: $finish    : verification/testbench.sv(25)
 #    Time: 1 ms  Iteration: 0  Instance: /tbench_top/testbench
-# End time: 15:42:14 on Sep 27,2022, Elapsed time: 0:00:01
-# Errors: 308, Warnings: 0
+# End time: 16:37:45 on Sep 27,2022, Elapsed time: 0:00:01
+# Errors: 309, Warnings: 1

@@ -91,8 +91,6 @@ module testbench(
     task test_decrement_mode();
         $display("\t**********Start testing decrement mode. Mode: s_in = 2'b10********");
         previous_data =data_output_from_counter;
-        @(posedge clk_in);
-        
         s_in = 2'b10;
         @(posedge clk_in);
         repeat (300) @(posedge clk_in)
