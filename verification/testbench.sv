@@ -175,13 +175,50 @@ module testbench(
 
     task reset_test;
         $display("\t**********Start reset test task******");
+        // test reset while having load mode
         load_task(30);
+        repeat (5) @(posedge clk_in); // wait for 5 clk cycle then change reset
 
-        repeat (30) @(posedge clk_in); // wait for 1 clk cycle then change reset
-        $display ("%d",data_output_from_counter);
         $root.tbench_top.reset_in = 1'b1;
-        
+        repeat(2)@(posedge clk_in);
+        assert (0 == data_output_from_counter) 
+        else   $error("Error at reset test with load mode, data coming from DUT is:%d",data_output_from_counter);
         repeat (10) @(posedge clk_in);
+        $root.tbench_top.reset_in = 1'b0;
+        @ (posedge clk_in);
+
+        // test reset with increment mode
+        s_in = 2'b01; 
+        repeat (10) @(posedge clk_in);
+        $root.tbench_top.reset_in = 1'b1;
+        repeat(2)@(posedge clk_in);
+        assert (0 == data_output_from_counter) 
+        else   $error("Error at reset test with increment mode, data coming from DUT is:%d",data_output_from_counter);
+        repeat (10) @(posedge clk_in);
+        $root.tbench_top.reset_in = 1'b0;
+
+
+        // test reset with derement mode
+        s_in = 2'b10; 
+        repeat (10) @(posedge clk_in);
+        $root.tbench_top.reset_in = 1'b1;
+        repeat(2)@(posedge clk_in);
+        assert (0 == data_output_from_counter) 
+        else   $error("Error at reset test with increment mode, data coming from DUT is:%d",data_output_from_counter);
+        repeat (10) @(posedge clk_in);
+        $root.tbench_top.reset_in = 1'b0;
+
+        // test reset with hold mode
+        s_in = 2'b00; 
+        repeat (10) @(posedge clk_in);
+        $root.tbench_top.reset_in = 1'b1;
+        repeat(2)@(posedge clk_in);
+        assert (0 == data_output_from_counter) 
+        else   $error("Error at reset test with increment mode, data coming from DUT is:%d",data_output_from_counter);
+        repeat (10) @(posedge clk_in);
+        $root.tbench_top.reset_in = 1'b0;
+
+        // set reset mode back to 0
         $root.tbench_top.reset_in = 1'b0;
         $display("\t**********FINISH RESET TEST**********\n");
     endtask

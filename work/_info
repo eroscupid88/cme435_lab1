@@ -10,10 +10,10 @@ z2
 cModel Technology
 Z0 d/home/dtv782/engr-ece/CME 435/cme435_lab1
 T_opt
-Z1 !s110 1664304618
-VzSKZiXIbOCGm0m=WjO[9Z0
+Z1 !s110 1664305617
+VaaePZD?3V7QPF1E[ceB;c3
 04 10 4 work tbench_top fast 0
-=1-b07b25240f21-633345ea-a90c2-3ba5e
+=1-b07b25240f21-633349d1-bab94-3c5fc
 o-quiet -auto_acc_if_foreign -work work
 Z2 tCvgOpt 0
 n@_opt
@@ -31,13 +31,13 @@ R0
 w1664148476
 8verification/clock_generator.sv
 Fverification/clock_generator.sv
-!i122 1030
+!i122 1048
 L0 4 5
 Z6 OL;L;2020.1_1;71
 r1
 !s85 0
 31
-Z7 !s108 1664304618.000000
+Z7 !s108 1664305617.000000
 Z8 !s107 verification/reset_driver.sv|verification/clock_generator.sv|verification/testbench.sv|verification/tbench_top.sv|dut/up_down_counter.svp|
 Z9 !s90 -f|script/cme435_lab1.f|
 !i113 0
@@ -56,7 +56,7 @@ R0
 w1664304218
 8verification/reset_driver.sv
 Fverification/reset_driver.sv
-!i122 1030
+!i122 1048
 L0 3 10
 R6
 r1
@@ -72,17 +72,17 @@ vtbench_top
 R3
 R1
 !i10b 1
-!s100 idL_o=>7N<008T;_3Vb[<3
+!s100 z2L_D9eBo8W_LmzoD<9aZ2
 R4
-I1fNUS[7D98M>cUmO:_3n@2
+Ib8_;lY9934zfSc<MP=ITB0
 R5
 S1
 R0
-w1664304512
+w1664305606
 Z11 8verification/tbench_top.sv
 Z12 Fverification/tbench_top.sv
-!i122 1030
-L0 2 41
+!i122 1048
+L0 2 39
 R6
 r1
 !s85 0
@@ -123,17 +123,17 @@ vtestbench
 R3
 R1
 !i10b 1
-!s100 ZYGKgfQWoLZcD6YR_GSLm1
+!s100 i]`=nO]W``S`n9c[o]15`1
 R4
-I8JEB`H@D4ZP?SCRPfLiM;0
+Ind>XP[ZBc4RC9XOoISHBH3
 R5
 S1
 R0
-w1664304606
+w1664305487
 8verification/testbench.sv
 Fverification/testbench.sv
-!i122 1030
-L0 2 207
+!i122 1048
+L0 2 246
 R6
 r1
 !s85 0
@@ -158,7 +158,7 @@ R0
 w1664246314
 8dut/up_down_counter.svp
 R13
-!i122 1030
+!i122 1048
 L0 1 21
 R6
 r1
