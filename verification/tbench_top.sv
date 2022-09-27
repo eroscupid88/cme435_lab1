@@ -13,7 +13,7 @@ module tbench_top;
 		end
 
 	
-
+	// reset driver
 	initial begin
 		reset_in = 1'b1;
 		#50 reset_in =1'b0;

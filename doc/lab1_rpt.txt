@@ -2,33 +2,65 @@ List of Design Features
 ----------------------------------------
 ID:Design Feature
 ----------------------------------------
-1: (One sentence for each design feature if possible.)
+1: Hold Mode: hold current data going to DUT and coming out from DUT 
 
-2:
+2: Load Mode: load data into register
 
-3:
+3: Increment Mode: data coming out from DUT is increase by 1 from data input
 
+4: Decrement Mode: data coming out from DUT is decrease by 1 from data input
 
+5: 8 bits up down counter register: the maxinum number comming out from DUT is 255. It can roll over from 255 to 0 and roll under vise versa (0 to 255) 
+
+6: bug_mode: this register can turn on bug mode depend on student Number
+
+7: Reset: data coming into DUT will be come 0 if reset =1 at positive clock
 
 List of Test cases
 ----------------------------------------
 ID:Task	Description
 ----------------------------------------
 1:reset_test:
-(Add a short description of this test case here.)
+Reset test test whether data coming into DUT is 0 after reset=1 at positive clk_in.
+4 Scenarios will be tested :reset will be on while running 4 different mode(hold, load, increment and decrement)
 
 2:sanity_check
-(Add a short description of this test case here.)
+Check connect when load data into DUT to see if signal output will come out from DUT to test bench
 
-3:.....
+3:test_load_data
+load 4 different data value values to see if the connection between testbench and DUT is established. 
+Compare whether data going out from test bench is equal to data coming into testbech from DUT after clock cycle.
+It need 2 clk cycle to check(1 clk cycle to load data into DUT, another clk cycle to check in the test bench)
 
+4:test_hold_mode
+hold mode is test under 2 scenarios. One is in decrement mode, another is in increment mode.The proceduce is the same for both scenarios
+    Load data into DUT
+    Change mode to decrement or increment
+    Change mode to hold after couple of clock cycle (7 clk cycle in this case)
+    running on many clock cycle to see if data coming out from test bench is equal to data going into test bench from DUT
 
+5: test_increment_mode
+change mode to increment. let DUT run repeatly and check if data coming out from DUT is increase everytime by 1
+(data must not be 255)
+
+6: test_increment_with_roll_over_mode
+change mode to increment. let DUT run repeatly and check if data coming out from DUT is 0 if previous data is 255
+
+7: test_decrement_mode
+change mode to derement. let DUT run repeatly and check if data coming out from DUT is decrease everytime by 1
+(data must not be 0)
+
+8: test_decrement_with_roll_under_mode
+change mode to decrement. let DUT run repeatly and check if data coming out from DUT is 255 if previous data is 0
 
 Embedded Bugs
 ----------------------------------------
 ID:Description
 ----------------------------------------
-1: Bugs happened while using load mode or hold mode, the output is not coming out from DUT
-3: The first bug is when reset bit is set to 0, nothing come out from DUT but when reset is set to 1, data from DUT to test bench
+1: Bugs happened while using load mode. Output coming out from DUT is 255 regardless of input comming into the DUT
 
-4: when data sent to test bench after reset = 0. first clock cycle data come out from DUT is 0, second clock cycle data come from DUT is 255 and they are not change after many other clock cycles
+2: No roll over when input coming into DUT is 255. output going out from DUT is still 255.
+
+3: When in decrement mode, if input coming into DUT is 255, the output coming out from DUT is decrese by 2 instead of 1
+
+to fix bug:

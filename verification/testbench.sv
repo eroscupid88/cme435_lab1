@@ -41,7 +41,7 @@ module testbench(
         begin
             @(posedge clk_in);           // load data every clk cycle
             load_task(data[i]);            
-            repeat(2)@(posedge clk_in);      // check if 2nd clk cycle the data coming in or not
+            repeat(2)@(posedge clk_in);      // check if 2nd clk cycle the data coming in or not (1 clk cycle for loading into DUT and another clk cycle to go into the test bench)
             assert (s_in ==2'b11 && data_output_from_counter == data[i]) 
             else   $error("Error in Load mode Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,data[i]);
         end
@@ -172,7 +172,6 @@ module testbench(
 
 
 
-
     task reset_test;
         $display("\t**********Start reset test task******");
         // test reset while having load mode
@@ -218,8 +217,7 @@ module testbench(
         repeat (10) @(posedge clk_in);
         $root.tbench_top.reset_in = 1'b0;
 
-        // set reset mode back to 0
-        $root.tbench_top.reset_in = 1'b0;
+
         $display("\t**********FINISH RESET TEST**********\n");
     endtask
 

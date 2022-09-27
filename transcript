@@ -3,22 +3,20 @@
 # vmap work work 
 # Modifying modelsim.ini
 # QuestaSim-64 vlog 2020.1_1 Compiler 2020.03 Mar  4 2020
-# Start time: 13:06:57 on Sep 27,2022
+# Start time: 14:27:00 on Sep 27,2022
 # vlog -f script/cme435_lab1.f 
 # -- Compiling module up_down_counter
 # -- Compiling module tbench_top
 # -- Compiling module testbench
 # -- Compiling module clock_generator
-# -- Compiling module reset_driver
 # 
 # Top level modules:
 # 	tbench_top
-# 	reset_driver
-# End time: 13:06:57 on Sep 27,2022, Elapsed time: 0:00:00
+# End time: 14:27:00 on Sep 27,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # tbench_top
 # vsim tbench_top 
-# Start time: 13:06:57 on Sep 27,2022
+# Start time: 14:27:00 on Sep 27,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: verification/tbench_top.sv(24): (vopt-3838) Variable 'clk_in' written by continuous and procedural assignments. 
 # One of the assignments is implicit. See verification/tbench_top.sv(22). 
@@ -72,5 +70,5 @@
 # Time out!
 # ** Note: $finish    : verification/testbench.sv(25)
 #    Time: 1 ms  Iteration: 0  Instance: /tbench_top/testbench
-# End time: 13:06:58 on Sep 27,2022, Elapsed time: 0:00:01
+# End time: 14:27:01 on Sep 27,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
