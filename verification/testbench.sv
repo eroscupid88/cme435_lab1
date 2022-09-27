@@ -176,7 +176,9 @@ module testbench(
     task reset_test;
         $display("\t**********Start reset test task******");
         load_task(30);
-        @(posedge clk_in);
+
+        repeat (30) @(posedge clk_in); // wait for 1 clk cycle then change reset
+        $display ("%d",data_output_from_counter);
         $root.tbench_top.reset_in = 1'b1;
         
         repeat (10) @(posedge clk_in);
