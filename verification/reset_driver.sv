@@ -5,6 +5,8 @@ module reset_driver(output bit reset_in);
     assign reset_in =local_reset;
     initial 
     begin
-    # 50    local_reset =1'b0;
+    # 50  local_reset =1'b0;
+    // #240 local_reset =1'b0;
+    // #1200 local_reset = 1'b0;
     end
 endmodule

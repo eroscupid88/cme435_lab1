@@ -7,18 +7,18 @@ module tbench_top;
 
 	initial 
 		begin
-		clk_in = 1'b0;
-		reset_in = 1'b0;
-		dut.student_no = 11100292;
-		dut.bug_mode = 1;
-		dut.enable_dut_bugs;
+		// clk_in = 1'b0;
+		// reset_in = 1'b0;
+		// dut.student_no = 11100292;
+		// dut.bug_mode = 1;
+		// dut.enable_dut_bugs;
 		end
 
 	
 
-	// reset_driver reset_driver(.reset_in);
+	reset_driver reset_driver(.reset_in);
 
-	// clock_generator clock_generator(.clk_in);
+	clock_generator clock_generator(.clk_in);
 
 	always #100 clk_in = ~clk_in;
 	testbench testbench(
@@ -29,10 +29,10 @@ module tbench_top;
 						.data_output_from_counter(data_out)
 						);
 	up_down_counter dut(.data_out,
-									 .data_in,
-									 .s_in,
-									 .clk_in,
-									 .reset_in);
+						.data_in,
+						.s_in,
+						.clk_in,
+						.reset_in);
 
 	
 	

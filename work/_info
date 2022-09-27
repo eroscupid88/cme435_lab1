@@ -10,17 +10,18 @@ z2
 cModel Technology
 Z0 d/home/dtv782/engr-ece/CME 435/cme435_lab1
 T_opt
-Z1 !s110 1664248737
-VCK037Sfhji59[hh7GZ`[]3
+!s110 1664299623
+VzhCC`BIcO0zho_17lnaXo2
 04 10 4 work tbench_top fast 0
-=1-b07b25243155-63326ba1-bb30d-15c23
+=1-b07b25240f21-63333267-168a1-37f30
 o-quiet -auto_acc_if_foreign -work work
-Z2 tCvgOpt 0
+Z1 tCvgOpt 0
 n@_opt
 OL;O;2020.1_1;71
+R0
 vclock_generator
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R1
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1664299707
 !i10b 1
 !s100 iWKX>Bcg9jU6X@0[nzazP3
 Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -31,33 +32,33 @@ R0
 w1664148476
 8verification/clock_generator.sv
 Fverification/clock_generator.sv
-!i122 813
+!i122 936
 L0 4 5
 Z6 OL;L;2020.1_1;71
 r1
 !s85 0
 31
-Z7 !s108 1664248737.000000
+Z7 !s108 1664299707.000000
 Z8 !s107 verification/reset_driver.sv|verification/clock_generator.sv|verification/testbench.sv|verification/tbench_top.sv|dut/up_down_counter.svp|
 Z9 !s90 -f|script/cme435_lab1.f|
 !i113 0
 Z10 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
-vreset_driver
-R3
 R1
+vreset_driver
+R2
+R3
 !i10b 1
-!s100 3BAH<NXG3mOz9c4mAaCd70
+!s100 _OnbL:2_]b>[6baBU@boN2
 R4
-IS]o_8>o6ZcbE4W8A:T;XQ0
+IBT0A7[=HY8S2Pn>U<I=nZ0
 R5
 S1
 R0
-w1664248266
+w1664299563
 8verification/reset_driver.sv
 Fverification/reset_driver.sv
-!i122 813
-L0 3 8
+!i122 936
+L0 3 10
 R6
 r1
 !s85 0
@@ -67,21 +68,21 @@ R8
 R9
 !i113 0
 R10
-R2
-vtbench_top
-R3
 R1
+vtbench_top
+R2
+R3
 !i10b 1
-!s100 eVBBd?GNjI>PFfcK``D9m2
+!s100 ImIeiOJb]fkPeMX:iMFmG0
 R4
-IM>jJh^OFRf`=Z]FVNWBF32
+IH@7Rbb<S2`<EEkc_OLEbL0
 R5
 S1
 R0
-w1664248596
+w1664252289
 Z11 8verification/tbench_top.sv
 Z12 Fverification/tbench_top.sv
-!i122 813
+!i122 936
 L0 2 38
 R6
 r1
@@ -92,9 +93,9 @@ R8
 R9
 !i113 0
 R10
-R2
+R1
 Xtbench_top_sv_unit
-R3
+R2
 !s110 1664246808
 VlA:S=9R3`I8fnjjM3<CI`1
 r1
@@ -118,35 +119,35 @@ R8
 R9
 !i113 0
 R10
-R2
-vtestbench
-R3
 R1
+vtestbench
+R2
+!s110 1664299622
 !i10b 1
-!s100 _MM9WC8:W5;_8FN5HGEIG1
+!s100 1@Um1XmYCz[h<[N]ZAJnd2
 R4
-IK=G1SJ8Oz=HK8b`f_05=b3
+IzLc<SKI];2PIzUbFXmC?M3
 R5
 S1
 R0
-w1664248624
+w1664299611
 8verification/testbench.sv
 Fverification/testbench.sv
-!i122 813
-L0 2 199
+!i122 934
+L0 2 210
 R6
 r1
 !s85 0
 31
-R7
+!s108 1664299622.000000
 R8
 R9
 !i113 0
 R10
-R2
-vup_down_counter
-R3
 R1
+vup_down_counter
+R2
+R3
 !i10b 1
 !s100 o>X;zYSVzMcEYo27PdTk50
 R4
@@ -158,7 +159,7 @@ R0
 w1664246314
 8dut/up_down_counter.svp
 R13
-!i122 813
+!i122 936
 L0 1 21
 R6
 r1
@@ -169,4 +170,4 @@ R8
 R9
 !i113 0
 R10
-R2
+R1

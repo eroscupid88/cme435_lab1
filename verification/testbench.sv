@@ -11,10 +11,13 @@ module testbench(
     parameter int TIMEOUT = 1000000;
 	const string time_out_message = "Time out!";
     bit [3:0][7:0] datas;
-    logic [7:0] previous_data; 
+    logic [7:0] previous_data ; 
+    always @(posedge clk_in)
+        previous_data <= data_output_from_counter;
     initial
     begin
     datas = '{8'd200,8'd245,8'd0,8'd255};
+    
     end
     initial begin
         s_in =2'b11;
@@ -34,15 +37,18 @@ module testbench(
     task test_load_data(input bit [3:0][7:0]data);
         $display("**********Start testing load data. Mode: s_in = 2'b11********");
         foreach (data[i])
-            #400            // load data every 2 clk cycle
-            begin
-                load_task(data[i]);    // 1 clk cycle
-                @(data_output_from_counter)
+        begin
+            repeat(2)@(posedge clk_in);           // load data every 2 clk cycle
+            load_task(data[i]);    // 1 clk cycle
+            $display("Error in%d-%d-%d-%d-rs%d",clk_in,s_in,for_up_down_counter,data_output_from_counter,reset_in);
+            #100    
+                @(posedge clk_in)
                 begin
+                    $display("Error in%d-%d-%d-%d-rs%d",clk_in,s_in,data[i],data_output_from_counter,reset_in);
                     if ((s_in ==2'b11)&&(data_output_from_counter != data[i]))                   
-                        $display("Error in Load mode Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,for_up_down_counter);
+                        $display("Error in Load mode Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,data[i]);
                 end
-            end
+        end
     endtask
 
 /*
@@ -53,6 +59,7 @@ module testbench(
         previous_data =data_output_from_counter;
         @(posedge clk_in)
         s_in = 2'b01;
+        #200
         repeat (300) @(data_output_from_counter)
             begin
             // $monitor("Increment Mode:\t Clk_in:%b,s_in:%d,input data from DUT:%d,output data to DUT:%d",clk_in,s_in,data_output_from_counter,previous_data);
@@ -136,9 +143,6 @@ module testbench(
         $display("**********Start testing hold mode . Mode: s_in = 2'b00********");
         // change to increment mode
         @(posedge clk_in)
-            s_in = 2'b01;
-        @(data_output_from_counter == 45) // pick data =45
-            s_in = 2'b00;
             // check if next cycle whether data ouput from counter is changing or not 
         #100
         @(posedge clk_in)
@@ -163,38 +167,45 @@ module testbench(
     */
     task sanity_check();
         $display("**********Start Sanity check task******");
-        // @(posedge clk_in)
-        //     load_task(45);
-        s_in = 2'b11;
-        for_up_down_counter = 45;
-        #1000
-        repeat (100)@(posedge clk_in)
-            $display("At:%d,clk_in:%d,s_in:%d,input data:%d, output:%d",$time,clk_in,s_in,for_up_down_counter,data_output_from_counter);
+        load_task(33);
+        repeat(2)@(posedge clk_in);
+        $display("At:%d,clk_in:%d,s_in:%d,input data:%d, output:%d",$time,clk_in,s_in,for_up_down_counter,data_output_from_counter);
         $display("**********FINISH SANITY CHECK TEST**********");
     endtask;
+
+
+
+
+    task reset_test;
+        $display("**********Start reset test task******");
+        load_task(30);
+        #180
+        @(posedge clk_in) assert (data_output_from_counter != 0) 
+        else   $error("sadfsdaf");
+            $display("rs-clk-toDUT:-totest:%dtime%treset%d",data_output_from_counter,$realtime,reset_in);
+            if ((reset_in == 1) && (data_output_from_counter != 0))
+                $display("rs%d-clk%d-toDUT:%d-totest:%d",reset_in,clk_in,for_up_down_counter,data_output_from_counter);
+        $display("**********FINISH RESET TEST**********");
+    endtask
 
 
     initial
     begin
         $display("**********Beginning test!**********");
+        // start test after 2 clock cycles
+        repeat(2)@(posedge clk_in);
+        // reset_test();
         sanity_check();
         test_load_data(datas);
-        test_increment_mode();
-        test_increment_mode_with_roll_over();
-        test_hold_mode();
-        test_decrement_mode();
-        test_decrement_mode_with_roll_under();
-        $display("%s",time_out_message);
+        // test_increment_mode();
+        // test_increment_mode_with_roll_over();
+        // test_hold_mode();
+        // test_decrement_mode();
+        // test_decrement_mode_with_roll_under();
+        // $display("%s",time_out_message);
     end
-    // initial begin
+
+    initial begin
         
-    // end
-
-    // initial begin
-        
-    // end
-
-
-
-    
+    end   
 endmodule

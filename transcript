@@ -3,145 +3,20 @@
 # vmap work work 
 # Modifying modelsim.ini
 # QuestaSim-64 vlog 2020.1_1 Compiler 2020.03 Mar  4 2020
-# Start time: 21:18:57 on Sep 26,2022
+# Start time: 11:28:27 on Sep 27,2022
 # vlog -f script/cme435_lab1.f 
 # -- Compiling module up_down_counter
 # -- Compiling module tbench_top
 # -- Compiling module testbench
+# ** Error: (vlog-13069) verification/testbench.sv(41): near "(": syntax error, unexpected '('.
 # -- Compiling module clock_generator
 # -- Compiling module reset_driver
+# End time: 11:28:27 on Sep 27,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /CMC/tools/mentor/questasim_2020.1_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./script/cme435_lab1_all.do line 8
+# /CMC/tools/mentor/questasim_2020.1_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -f script/cme435_lab1.f"
 # 
-# Top level modules:
-# 	tbench_top
-# 	clock_generator
-# 	reset_driver
-# End time: 21:18:57 on Sep 26,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# tbench_top
-# vsim tbench_top 
-# Start time: 21:18:57 on Sep 26,2022
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# //  Questa Sim-64
-# //  Version 2020.1_1 linux_x86_64 Mar  4 2020
-# //
-# //  Copyright 1991-2020 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  QuestaSim and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
-# //
-# Loading sv_std.std
-# Loading work.tbench_top(fast)
-# **********Beginning test!**********
-# **********Start Sanity check task******
-# At:                 300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                 500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                 700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                 900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                1100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                1300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                1500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                1700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                1900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                2100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                2300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                2500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                2700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                2900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                3100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                3300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                3500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                3700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                3900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                4100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                4300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                4500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                4700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                4900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                5100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                5300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                5500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                5700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                5900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                6100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                6300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                6500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                6700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                6900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                7100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                7300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                7500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                7700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                7900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                8100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                8300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                8500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                8700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                8900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                9100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                9300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                9500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                9700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:                9900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               10100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               10300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               10500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               10700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               10900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               11100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               11300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               11500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               11700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               11900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               12100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               12300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               12500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               12700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               12900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               13100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               13300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               13500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               13700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               13900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               14100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               14300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               14500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               14700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               14900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               15100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               15300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               15500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               15700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               15900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               16100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               16300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               16500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               16700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               16900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               17100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               17300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               17500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               17700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               17900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               18100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               18300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               18500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               18700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               18900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               19100,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               19300,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               19500,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               19700,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               19900,clk_in:1,s_in:0,input data: 45, output:  x
-# At:               20100,clk_in:1,s_in:0,input data: 45, output:  x
-# **********FINISH SANITY CHECK TEST**********
-# **********Start testing load data. Mode: s_in = 2'b11********
-# ** Note: $finish    : verification/testbench.sv(21)
-#    Time: 1 ms  Iteration: 0  Instance: /tbench_top/testbench
-# End time: 21:18:58 on Sep 26,2022, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# <EOF>
